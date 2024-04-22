@@ -1,10 +1,7 @@
 import com.aspose.words.*;
 
 public class fileConverter{
-    public static void convert(String input, String output, String format) throws Exception {
-        Document doc = new Document();
-        DocumentBuilder builder = new DocumentBuilder(doc);
-        Shape shape = builder.insertImage(input);
+    private static int getFormat(String format){
         int fileFormat = switch (format.toUpperCase()) {
             case "BMP" -> SaveFormat.BMP;
             case "DOT" -> SaveFormat.DOT;
@@ -16,6 +13,14 @@ public class fileConverter{
             case "PDF" -> SaveFormat.PDF;
             default -> 102;
         };
+        return fileFormat;
+    }
+
+    public static void convert(String input, String output, String format) throws Exception {
+        Document doc = new Document();
+        DocumentBuilder builder = new DocumentBuilder(doc);
+        Shape shape = builder.insertImage(input);
+        int fileFormat = getFormat(format);
         shape.getShapeRenderer().save(output, new ImageSaveOptions(fileFormat));
     }
 }
