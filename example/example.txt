@@ -1,0 +1,6 @@
+Первый ввод:
+C:\Users\USERRR\IdeaProjects\MessandgerPeredelka\example\input.jpg
+Второй ввод:
+C:\Users\USERRR\IdeaProjects\MessandgerPeredelka\example\output.bmp
+Третий ввод:
+bmp
